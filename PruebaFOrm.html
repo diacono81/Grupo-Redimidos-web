@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Formulario de contacto</h2>
+
+    <form action="procesar_formulario.php" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br><br>
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea>
+        <br><br>
+        <input type="submit" value="Enviar">
+        <button type="button" onclick="copiarTexto()">Copiar mensaje</button>
+    </form>
+
+    <script>
+        function copiarTexto() {
+            // Obtener el texto ingresado en el textarea
+            var mensaje = document.getElementById("mensaje").value;
+            var nombre = document.getElementById("nombre").value;
+
+            // Combinar los datos en un solo texto
+            var textoACopiar = "Nombre: " + nombre + "\nCorreo electrónico: " + email + "\nMensaje: " + mensaje;
+
+
+            // Copiar el texto al portapapeles
+            navigator.clipboard.writeText(textoACopiar)
+                .then(function() {
+                    // Éxito
+                    alert("¡Mensaje copiado!");
+                })
+                .catch(function(error) {
+                    // Manejar errores
+                    console.error("Error al copiar el mensaje: ", error);
+                });
+        }
+    </script>
+
+</body>
+</html>
