@@ -7,14 +7,14 @@
 </head>
 <body>
     
-    <h2>Formulario de contacto</h2>
+    <h2>Formulario para compartir Pan diario</h2>
 
     <form action="procesar_formulario.php" method="post">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
         <br><br>
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required>
+        <label for="email">Fecha:</label>
+        <input type="text" id="fecha" name="fecha" required>
         <br><br>
         <label for="mensaje">Mensaje:</label>
         <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea>
@@ -28,9 +28,10 @@
             // Obtener el texto ingresado en el textarea
             var mensaje = document.getElementById("mensaje").value;
             var nombre = document.getElementById("nombre").value;
+            var fecha = document.getElementById("fecha").value;
 
             // Combinar los datos en un solo texto
-            var textoACopiar = "Nombre: " + nombre + "\nCorreo electrónico: " + email + "\nMensaje: " + mensaje;
+            var textoACopiar = "Nombre: " + nombre + "\nFecha: " + fecha + "\nMensaje: " + mensaje;
 
 
             // Copiar el texto al portapapeles
