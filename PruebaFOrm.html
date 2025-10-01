@@ -37,9 +37,7 @@
         <button class="boton" onclick="redirigir('index.html')">VOLVER</button> 
         <button type="button" onclick="copiarTexto()">Copiar mensaje</button>
 
-        <a href="https://api.whatsapp.com/send?phone=0123456789&text=Hola, quiero comprar tu producto!">
-            <img src="./whatsapp.png" alt="Whatsapp">
-          </a>
+       
 
 
     </form>
@@ -68,7 +66,12 @@
                     console.error("Error al copiar el mensaje: ", error);
                 });
         }
+
+      
     </script>
 
+    <a href="https://api.whatsapp.com/send?phone= &text= + textoAcopiar ">
+        <img src="./whatsapp.png" alt="Whatsapp">
+      </a>
 </body>
 </html>
